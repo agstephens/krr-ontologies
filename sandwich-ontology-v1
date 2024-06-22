@@ -1,0 +1,506 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1/"
+     xml:base="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1/"
+     xmlns:v1="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1">
+        <owl:versionIRI rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology-v1"/>
+        <rdfs:comment>A simple ontology for the domain of the Sandwich.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+        <owl:propertyDisjointWith rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread"/>
+        <rdfs:comment>Role: contains a filling.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#costsLessThan -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#costsLessThan">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#costsMoreThan"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <owl:propertyDisjointWith rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#costsMoreThan"/>
+        <rdfs:comment>Role: costs less than.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#costsMoreThan -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#costsMoreThan">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:comment>Role: costs more than.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread">
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread"/>
+        <rdfs:comment>Role: has bread.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isFillingOf -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isFillingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment>Role: is filling of.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasPrice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isHeated -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isHeated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isMeaty -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isMeaty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <owl:propertyDisjointWith rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isVegetarian"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isVegetarian -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isVegetarian">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Any2Sandwich -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Any2Sandwich">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A sandwich containing any 2 fillings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BLTSandwich -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BLTSandwich">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BaconFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LettuceFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#TomatoFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BaconFilling"/>
+                                    <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LettuceFilling"/>
+                                    <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#TomatoFilling"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:comment>Bacon, Lettuce and Tomato Sandwich.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BaconFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BaconFilling">
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#MeatFilling"/>
+        <owl:disjointWith rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#HamFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseFilling">
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseToastySandwich -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseToastySandwich">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:allValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseFilling"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+        <rdfs:comment>Toasted Cheese Sandwich.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#HamFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#HamFilling">
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#MeatFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LettuceFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LettuceFilling">
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#MeatFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#MeatFilling">
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#PlantBasedSandwich -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#PlantBasedSandwich">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                        <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                        <owl:allValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:allValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>Entirely Vegan Plant-based Sandwich.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread">
+        <owl:disjointWith rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isFillingOf"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#TomatoFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#TomatoFilling">
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling -->
+
+    <owl:Class rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling">
+        <rdfs:subClassOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchFriday -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchFriday">
+        <rdf:type rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BLTSandwich"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#BaconFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LettuceFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#TomatoFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread"/>
+                <owl:allValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread"/>
+            </owl:Restriction>
+        </rdf:type>
+        <v1:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.0</v1:hasPrice>
+        <v1:isHeated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</v1:isHeated>
+        <v1:isMeaty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</v1:isMeaty>
+        <v1:isVegetarian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</v1:isVegetarian>
+        <rdfs:comment>My lunch on Friday.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchMonday -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchMonday">
+        <rdf:type rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Any2Sandwich"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#TomatoFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread"/>
+            </owl:Restriction>
+        </rdf:type>
+        <v1:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.5</v1:hasPrice>
+        <v1:isHeated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</v1:isHeated>
+        <v1:isMeaty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</v1:isMeaty>
+        <v1:isVegetarian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</v1:isVegetarian>
+        <rdfs:comment>My lunch on Monday.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchThursday -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchThursday">
+        <rdf:type rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#PlantBasedSandwich"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LettuceFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#TomatoFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread"/>
+                <owl:allValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread"/>
+            </owl:Restriction>
+        </rdf:type>
+        <v1:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</v1:hasPrice>
+        <v1:isHeated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</v1:isHeated>
+        <v1:isMeaty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</v1:isMeaty>
+        <v1:isVegetarian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</v1:isVegetarian>
+        <rdfs:comment>My lunch on Thursday.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchTuesday -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#LunchTuesday">
+        <rdf:type rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseToastySandwich"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseFilling"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread"/>
+                <owl:allValuesFrom rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichBread"/>
+            </owl:Restriction>
+        </rdf:type>
+        <v1:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</v1:hasPrice>
+        <v1:isHeated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</v1:isHeated>
+        <v1:isMeaty rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</v1:isMeaty>
+        <v1:isVegetarian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</v1:isVegetarian>
+        <rdfs:comment>My lunch on Tuesday.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#CheeseFilling"/>
+            <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#MeatFilling"/>
+            <rdf:Description rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#VegetableFilling"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

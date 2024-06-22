@@ -29,6 +29,7 @@
 
     <owl:ObjectProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#containsFilling">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isFillingOf"/>
         <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
         <rdfs:range rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
         <owl:propertyDisjointWith rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#hasBread"/>
@@ -75,6 +76,8 @@
 
     <owl:ObjectProperty rdf:about="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#isFillingOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#SandwichFilling"/>
+        <rdfs:range rdf:resource="https://github.com/agstephens/krr-ontologies/blob/main/sandwich-ontology/v1#Sandwich"/>
         <rdfs:comment>Role: is filling of.</rdfs:comment>
     </owl:ObjectProperty>
     
